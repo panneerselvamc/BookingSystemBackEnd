@@ -1,5 +1,7 @@
 package com.bookingsystem.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,11 @@ public class BookingSystemServiceImpl implements BookingSystemServiceInterface {
 
 	@Override
 	public List<BookingSystemModel> searchForFlight(FlightSearch flightSearch) {
-		System.out.println(flightSearch.getSourceAddress());
-		return bookingSystemRepository.searchForFlight(flightSearch.getSourceAddress(), flightSearch.getDestination());
+		
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		String date = simpleDateFormat.format(flightSearch.getDateOfTravel());
+		return bookingSystemRepository.searchForFlight(flightSearch.getSourceAddress(), flightSearch.getDestination(),String.valueOf(date));
 	}
 
 }

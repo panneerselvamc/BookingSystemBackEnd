@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @CrossOrigin
-@ComponentScan(basePackages = "com.bookingsystem")
 @EntityScan(basePackages = "com.bookingsystem.model")
 @ComponentScan(basePackages = "com.bookingsystem")
 @EnableJpaRepositories(basePackages = "com.bookingsystem.repository")

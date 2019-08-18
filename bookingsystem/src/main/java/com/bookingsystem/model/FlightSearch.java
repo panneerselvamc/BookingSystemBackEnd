@@ -1,5 +1,7 @@
 package com.bookingsystem.model;
 
+import java.util.Date;
+
 public class FlightSearch {
 	private String sourceAddress;
 
@@ -12,7 +14,7 @@ public class FlightSearch {
 	}
 
 	private String destination;
-	private String dateOfTravel;
+	private Date dateOfTravel;
 	private String transportType;
 	private String transportClass;
 
@@ -32,11 +34,11 @@ public class FlightSearch {
 		this.destination = destination;
 	}
 
-	public String getDateOfTravel() {
+	public Date getDateOfTravel() {
 		return dateOfTravel;
 	}
 
-	public void setDateOfTravel(String dateOfTravel) {
+	public void setDateOfTravel(Date dateOfTravel) {
 		this.dateOfTravel = dateOfTravel;
 	}
 
