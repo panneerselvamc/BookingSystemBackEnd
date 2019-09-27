@@ -5,15 +5,34 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
+
 @Entity
 @Table(name = "Flight")
+
 public class BookingSystemModel {
-	@Id
+	@Id()
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	
 	private int flight_id;
 	private int airline_id;
+	
+	private String FlightName;
+	public String getFlightName() {
+		return FlightName;
+	}
+
+	public void setFlightName(String flightName) {
+		FlightName = flightName;
+	}
 
 	private String sourceAddress;
 

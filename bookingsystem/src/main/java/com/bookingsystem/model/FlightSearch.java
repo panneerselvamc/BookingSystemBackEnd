@@ -2,6 +2,7 @@ package com.bookingsystem.model;
 
 import java.util.Date;
 
+
 public class FlightSearch {
 	private String sourceAddress;
 
